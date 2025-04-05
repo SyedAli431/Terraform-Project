@@ -4,3 +4,9 @@ resource "aws_vpc" "lab5-vpc" {
     enable_dns_support = true
     tags = {Name = "lab5-vpc"}
 }
+
+
+resource "aws_internet_gateway" "igw-example" {
+    vpc_id = aws_vpc.lab5-vpc
+    tags = {Name = "igw-example"}
+}
